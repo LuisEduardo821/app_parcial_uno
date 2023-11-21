@@ -1,8 +1,7 @@
-import 'package:app_parcial_uno/pages/about_page.dart';
-import 'package:app_parcial_uno/pages/info_page.dart';
-import 'package:app_parcial_uno/pages/login_page.dart';
-import 'package:app_parcial_uno/pages/register_page.dart';
+
+import 'package:app_parcial_uno/routes/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,8 +16,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const InfoPage()));
+                    context.push('/info');
                   },
                   icon: const Icon(Icons.info),
                 )),
@@ -30,33 +28,22 @@ class HomePage extends StatelessWidget {
             const Center(child: Text('Welcome to News App')),
             FilledButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
+                  context.push(AppRouters.login);
                 },
-                child: const Text('Login')
-                ),
+                child: const Text('Login')),
             FilledButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const RegisterPage(),
-                    ),
-                  );
+                  context.push(AppRouters.register);
                 },
                 child: const Text('Register')),
             FilledButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const InfoPage()));
+                  context.push(AppRouters.info);
                 },
                 child: const Text('Info')),
             FilledButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const AboutPage()));
+                  context.push(AppRouters.about);
                 },
                 child: const Text('About'))
           ],
