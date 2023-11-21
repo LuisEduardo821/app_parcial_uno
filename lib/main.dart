@@ -1,4 +1,4 @@
-import 'package:app_parcial_uno/pages/home_page.dart';
+import 'package:app_parcial_uno/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomePage(),
     );
   }
 }

@@ -1,5 +1,7 @@
-import 'package:app_parcial_uno/pages/dashboard_page.dart';
+
+import 'package:app_parcial_uno/routes/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -18,11 +20,7 @@ class LoginPage extends StatelessWidget {
             ),
             FilledButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const DashboardPage(),
-                    ),
-                  );
+                  context.push(AppRouters.dashboard);
                 },
                 child: const Text('Dashboard'))
           ],

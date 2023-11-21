@@ -10,7 +10,7 @@ class InfoPage extends StatelessWidget {
         title: const Text('Info Page'),
       ),
       body: const Center(
-        child: Text('This is a info Page')
+        child: Text('Gordo meco',style: TextStyle(fontSize: 100),)
         ),
     );
   }
